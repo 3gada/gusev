@@ -1,0 +1,229 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to blinky.o(.text) for SysTick_Handler
+    startup_lpc17xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_lpc17xx.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    blinky.o(.text) refers to glcd_spi_lpc1700.o(.text) for GLCD_Bargraph
+    blinky.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
+    blinky.o(.text) refers to librarydisplay.o(.text) for init_display
+    blinky.o(.text) refers to fadd.o(.text) for __aeabi_fadd
+    blinky.o(.text) refers to ffltui.o(.text) for __aeabi_ui2f
+    blinky.o(.text) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    blinky.o(.text) refers to fdiv.o(.text) for __aeabi_fdiv
+    blinky.o(.text) refers to fmul.o(.text) for __aeabi_fmul
+    blinky.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    blinky.o(.text) refers to sin.o(i.sin) for sin
+    blinky.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    blinky.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    blinky.o(.text) refers to dfixui.o(.text) for __aeabi_d2uiz
+    blinky.o(.text) refers to blinky.o(.data) for data
+    glcd_spi_lpc1700.o(.text) refers to glcd_spi_lpc1700.o(.data) for driverCode
+    glcd_spi_lpc1700.o(.text) refers to glcd_spi_lpc1700.o(.constdata) for Font_24x16
+    librarydisplay.o(.text) refers to glcd_spi_lpc1700.o(.text) for GLCD_Init
+    sin.o(i.__softfp_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.__softfp_sin) refers to sin.o(i.sin) for sin
+    sin.o(i.sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.sin) refers to errno.o(i.__set_errno) for __set_errno
+    sin.o(i.sin) refers to ddiv.o(.text) for __aeabi_ddiv
+    sin.o(i.sin) refers to dscalb.o(.text) for __ARM_scalbn
+    sin.o(i.sin) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin.o(i.sin) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin.o(i.sin) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    sin_x.o(i.____softfp_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.____softfp_sin$lsc) refers to sin_x.o(i.__sin$lsc) for __sin$lsc
+    sin_x.o(i.__sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.__sin$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sin_x.o(i.__sin$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    sin_x.o(i.__sin$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin_x.o(i.__sin$lsc) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin_x.o(i.__sin$lsc) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_i.o(i.__kernel_cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_i.o(i.__kernel_cos) refers to dfixi.o(.text) for __aeabi_d2iz
+    cos_i.o(i.__kernel_cos) refers to dmul.o(.text) for __aeabi_dmul
+    cos_i.o(i.__kernel_cos) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    cos_i.o(i.__kernel_cos) refers to dadd.o(.text) for __aeabi_dsub
+    cos_i.o(i.__kernel_cos) refers to dscalb.o(.text) for __ARM_scalbn
+    cos_i.o(i.__kernel_cos) refers to cos_i.o(.constdata) for .constdata
+    cos_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(i.__ieee754_rem_pio2) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(i.__ieee754_rem_pio2) refers to dadd.o(.text) for __aeabi_dsub
+    rred.o(i.__ieee754_rem_pio2) refers to dmul.o(.text) for __aeabi_dmul
+    rred.o(i.__ieee754_rem_pio2) refers to dfixi.o(.text) for __aeabi_d2iz
+    rred.o(i.__ieee754_rem_pio2) refers to dflti.o(.text) for __aeabi_i2d
+    rred.o(i.__ieee754_rem_pio2) refers to dfltui.o(.text) for __aeabi_ui2d
+    rred.o(i.__ieee754_rem_pio2) refers to dscalb.o(.text) for __ARM_scalbn
+    rred.o(i.__ieee754_rem_pio2) refers to rred.o(.constdata) for .constdata
+    rred.o(i.__use_accurate_range_reduction) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    sin_i.o(i.__kernel_sin) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    sin_i.o(i.__kernel_sin) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i.o(i.__kernel_sin) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i.o(i.__kernel_sin) refers to dscalb.o(.text) for __ARM_scalbn
+    sin_i.o(i.__kernel_sin) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i.o(i.__kernel_sin) refers to sin_i.o(.constdata) for .constdata
+    sin_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i_x.o(i.____kernel_sin$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i_x.o(i.____kernel_sin$lsc) refers to sin_i_x.o(.constdata) for .constdata
+    sin_i_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to blinky.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to blinky.o(.text) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_lpc17xx.o(HEAP), (0 bytes).
+    Removing system_lpc17xx.o(.rev16_text), (4 bytes).
+    Removing system_lpc17xx.o(.revsh_text), (4 bytes).
+    Removing rtx_conf_cm.o(.text), (10 bytes).
+    Removing rtx_conf_cm.o(.bss), (2184 bytes).
+    Removing rtx_conf_cm.o(.data), (4 bytes).
+    Removing blinky.o(.rev16_text), (4 bytes).
+    Removing blinky.o(.revsh_text), (4 bytes).
+    Removing blinky.o(.bss), (56 bytes).
+    Removing blinky.o(.constdata), (4 bytes).
+    Removing glcd_spi_lpc1700.o(.rev16_text), (4 bytes).
+    Removing glcd_spi_lpc1700.o(.revsh_text), (4 bytes).
+    Removing librarydisplay.o(.rev16_text), (4 bytes).
+    Removing librarydisplay.o(.revsh_text), (4 bytes).
+
+14 unused section(s) (total 2290 bytes) removed from the image.
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000032b0, Max: 0x00080000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00003270, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000c4   Data   RO            3    RESET               startup_lpc17xx.o
+    0x000000c4   0x00000000   Code   RO          184  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000c4   0x00000004   Code   RO          219    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000c8   0x00000004   Code   RO          222    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000cc   0x00000000   Code   RO          224    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000cc   0x00000000   Code   RO          226    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000cc   0x00000008   Code   RO          227    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000d4   0x00000000   Code   RO          229    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000d4   0x00000000   Code   RO          231    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000d4   0x00000004   Code   RO          220    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000d8   0x0000001c   Code   RO            5    .text               startup_lpc17xx.o
+    0x000000f4   0x000001c4   Code   RO           82    .text               blinky.o
+    0x000002b8   0x0000000a   Code   RO          197    .text               mf_w.l(ffltui.o)
+    0x000002c2   0x00000032   Code   RO          199    .text               mf_w.l(dfixui.o)
+    0x000002f4   0x00000000   Code   RO          246    .text               mc_w.l(iusefp.o)
+    0x000002f4   0x00000000   Data   RO          269    Region$$Table       anon$$obj.o
+    0x000002f4   0x00000008   PAD
+    0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000214   Code   RO           15    .text               system_lpc17xx.o
+    0x00000514   0x000007d4   Code   RO          121    .text               glcd_spi_lpc1700.o
+    0x00000ce8   0x000000ea   Code   RO          158    .text               librarydisplay.o
+    0x00000dd2   0x000000b0   Code   RO          187    .text               mf_w.l(fadd.o)
+    0x00000e82   0x0000006c   Code   RO          189    .text               mf_w.l(fmul.o)
+    0x00000eee   0x00000080   Code   RO          191    .text               mf_w.l(fdiv.o)
+    0x00000f6e   0x0000014e   Code   RO          193    .text               mf_w.l(dadd.o)
+    0x000010bc   0x000000e4   Code   RO          195    .text               mf_w.l(dmul.o)
+    0x000011a0   0x00000026   Code   RO          201    .text               mf_w.l(f2d.o)
+    0x000011c6   0x00000002   PAD
+    0x000011c8   0x00000014   Code   RO          203    .text               mf_w.l(cfcmple.o)
+    0x000011dc   0x0000001e   Code   RO          233    .text               mc_w.l(llshl.o)
+    0x000011fa   0x00000020   Code   RO          235    .text               mc_w.l(llushr.o)
+    0x0000121a   0x00000024   Code   RO          237    .text               mc_w.l(llsshr.o)
+    0x0000123e   0x0000006c   Code   RO          247    .text               mf_w.l(fepilogue.o)
+    0x000012aa   0x000000be   Code   RO          249    .text               mf_w.l(depilogue.o)
+    0x00001368   0x000000de   Code   RO          251    .text               mf_w.l(ddiv.o)
+    0x00001446   0x0000002e   Code   RO          253    .text               mf_w.l(dscalb.o)
+    0x00001474   0x00000024   Code   RO          261    .text               mc_w.l(init.o)
+    0x00001498   0x00000022   Code   RO          263    .text               mf_w.l(dflti.o)
+    0x000014ba   0x0000001a   Code   RO          265    .text               mf_w.l(dfltui.o)
+    0x000014d4   0x0000003e   Code   RO          267    .text               mf_w.l(dfixi.o)
+    0x00001512   0x00000028   Code   RO          257    i.__ARM_fpclassify  m_ws.l(fpclassify.o)
+    0x0000153a   0x00000002   PAD
+    0x0000153c   0x00000388   Code   RO          208    i.__ieee754_rem_pio2  m_ws.l(rred.o)
+    0x000018c4   0x000000fc   Code   RO          205    i.__kernel_cos      m_ws.l(cos_i.o)
+    0x000019c0   0x000000aa   Code   RO          259    i.__kernel_poly     m_ws.l(poly.o)
+    0x00001a6a   0x00000002   PAD
+    0x00001a6c   0x000000ec   Code   RO          213    i.__kernel_sin      m_ws.l(sin_i.o)
+    0x00001b58   0x00000010   Code   RO          255    i.__mathlib_dbl_underflow  m_ws.l(dunder.o)
+    0x00001b68   0x0000000c   Code   RO          241    i.__set_errno       mc_w.l(errno.o)
+    0x00001b74   0x000000b0   Code   RO          177    i.sin               m_ws.l(sin.o)
+    0x00001c24   0x00000028   Data   RO           59    .constdata          rtx_conf_cm.o
+    0x00001c4c   0x00001500   Data   RO          122    .constdata          glcd_spi_lpc1700.o
+    0x0000314c   0x00000004   PAD
+    0x00003150   0x00000030   Data   RO          206    .constdata          m_ws.l(cos_i.o)
+    0x00003180   0x000000c8   Data   RO          210    .constdata          m_ws.l(rred.o)
+    0x00003248   0x00000028   Data   RO          214    .constdata          m_ws.l(sin_i.o)
+
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00000240, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000004   Data   RW           16    .data               system_lpc17xx.o
+    0x10000004   0x00000030   Data   RW           85    .data               blinky.o
+    0x10000034   0x00000006   Data   RW          123    .data               glcd_spi_lpc1700.o
+    0x1000003a   0x00000002   PAD
+    0x1000003c   0x00000004   Data   RW          242    .data               mc_w.l(errno.o)
+    0x10000040   0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
+

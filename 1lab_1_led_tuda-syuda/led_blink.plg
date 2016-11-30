@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Ó÷åáà\2012\Cortex-M3\soft\lab_1_led_blink\led_blink.uvproj
+Project File Date:  11/26/2012
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling led_blink.c...
+led_blink.c(29): warning:  #61-D: integer operation result is out of range
+led_blink.c:    B[5] = (1<<31);
+led_blink.c:               ^
+led_blink.c(29): warning:  #68-D: integer conversion resulted in a change of sign
+led_blink.c:    B[5] = (1<<31);
+led_blink.c:           ^
+led_blink.c(35): warning:  #61-D: integer operation result is out of range
+led_blink.c:    LPC_GPIO1->FIODIR  |= (1<<28)  | (1<<29)  | (1<<31)                ;  // P1.28, P1.29, P1.31 - OUT 
+led_blink.c:                                                    ^
+led_blink.c(49): warning:  #1-D: last line of file ends without a newline
+led_blink.c:   }
+led_blink.c:    ^
+led_blink.c: led_blink.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=1112 RO-data=236 RW-data=12 ZI-data=676  
+"led_blink.axf" - 0 Error(s), 4 Warning(s).
+Load "D:\\Ó÷åáà\\2012\\Cortex-M3\\soft\\lab_1_led_blink\\led_blink.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
