@@ -3,12 +3,12 @@
 #include "LibraryDisplay.h"
 #include "math.h"
 
-const float pi = 3.141592653589793;
 unsigned int data=0, data1=0;
 unsigned int i0, tick=0, switching=0, step=10;;
 unsigned int A[8], B[3], C[3];
 unsigned int i=0, j, ii=0, ij=0, value=0;
 float x=0;
+const float pi = 3.141592653589793;
 
 
 void SysTick_Handler();
