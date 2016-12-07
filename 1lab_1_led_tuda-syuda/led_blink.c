@@ -7,7 +7,7 @@ unsigned int i, djostic;
 unsigned int i0;
 
 void delay(int count){
-	for (i0 = 0; i0 < count; i0++) 
+	for (i0 = 0; i0 < count; i0++)
 	{
 		
 	}
@@ -29,34 +29,38 @@ int main()
 	LPC_GPIO2->FIODIR  |= (1<<2) | (1<<3) | (1<<4)  | (1<<5)  | (1<<6) ;  // P2.2 - P2.6 - OUT 
 	LPC_GPIO1->FIODIR  |= (1<<28)  | (1<<29)  | (1<<31)                ;  // P1.28, P1.29, P1.31 - OUT 
 
-	while (1)
-	 {
-	  for (i = 0; i < 8; i++) 
-	   {
-				djostic = LPC_GPIO1->FIOPIN & (1<<20);
-				if(djostic != 0)
-				{
-					if (i <= 4){ 
-						LPC_GPIO2->FIOPIN  = A[i];
-						LPC_GPIO1->FIOPIN = 0;
-					}	else {
-						LPC_GPIO1->FIOPIN  = A[i];
-						LPC_GPIO2->FIOPIN = 0;
-						
-					}
-				}
-				else{
-					if (i <= 4){ 
-						LPC_GPIO2->FIOPIN  = ~A[i];
-						LPC_GPIO1->FIOPIN = ~0;
-					}	else {
-						LPC_GPIO1->FIOPIN  = ~A[i];
-						LPC_GPIO2->FIOPIN = ~0;
-						
-					}
-				}
-				delay(500000);
-			}
-    }
+    while (1)
+    {
+        for (i = 0; i < 8; i++) 
+        {
+            djostic = LPC_GPIO1->FIOPIN & (1<<20);
+            if(djostic != 0)
+            {
+                if (i <= 4){ 
+                    LPC_GPIO2->FIOPIN  = A[i];
+                    LPC_GPIO1->FIOPIN = 0;
+                }
+                else
+                {
+                    LPC_GPIO1->FIOPIN  = A[i];
+                    LPC_GPIO2->FIOPIN = 0;
 
+                }
+            }
+            else
+            {
+                if (i <= 4)
+                { 
+                    LPC_GPIO2->FIOPIN  = ~A[i];
+                    LPC_GPIO1->FIOPIN = ~0;
+                }
+                else
+                {
+                    LPC_GPIO1->FIOPIN  = ~A[i];
+                    LPC_GPIO2->FIOPIN = ~0;
+                }
+            }
+            delay(500000);
+        }
+    }
 }

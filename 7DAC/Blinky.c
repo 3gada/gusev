@@ -4,36 +4,33 @@
 #include "math.h"
 
 unsigned int data=0, data1=0;
-unsigned int i0, tick=0, switching=0, step=10;;
-unsigned int A[8], B[3], C[3];
-unsigned int i=0, j, ii=0, ij=0, value=0;
+unsigned int i=0, i0, tick=0, step=30;
+unsigned int Fd=15; //kHz
 float x=0;
 const float pi = 3.141592653589793;
 
 
 void SysTick_Handler();
+void systick_init();
 void delay(int);
 void port_init();
-void systick_init();
-void display_line();
 void InitDAC();
 
 int main (void)
 {
 	SystemInit ();	
-	init_display();
 	port_init();
     systick_init();    
-	display_line();
     InitDAC();
         
     while (1) 
     {
-        if (j!=ij){
-            j=ij;
+        if (tick!=0){
+            tick=0;
             x++;
             if (x >= step) {
                 x = 0;
+                LPC_GPIO1->FIOPIN ^= (1<<28);
             }
             data = 512*sin(2*pi/step*x)+512;
             data1 = ((data & 0x3FF) << 6);
@@ -46,15 +43,12 @@ int main (void)
 void SysTick_Handler( void )
 {
     tick++;
-    if (tick >= 500)
-    {
-        tick = 0 ;
-        ij++;
-        if (ij >= 8)
-        {
-            ij = 0 ;
-        }
-    }
+}
+
+void systick_init(){
+    SysTick->LOAD = 94000/Fd - 1;      /* set reload register */
+    SysTick->VAL = (0x00);          /* Load the SysTick Counter Value */
+    SysTick->CTRL = (1 << 2)|(1<<0)|(1<<1);
 }
 
 void delay(int count){
@@ -66,19 +60,8 @@ void port_init(){
 	LPC_GPIO1->FIODIR  |= (1<<28)  | (1<<29)  | (1<<31);                  // P1.28, P1.29, P1.31 - OUT
 }
 
-
-
-void display_line(){
-	GLCD_Bargraph(5, 5, 5, 230, Purple);
-	GLCD_Bargraph(5, 5, 310, 5, Purple);	
-	GLCD_Bargraph(310, 5, 5, 230, Purple);
-	GLCD_Bargraph(5, 230, 310, 5, Purple);
-}
-
-
 void InitDAC()
 {
-    LPC_PINCON->PINSEL1 = (0x10<<20); //Set DAC output
-    //LPC_DAC->DACR |= (0 << 16);
-    LPC_DAC->DACR |= ((data & 0x3FF) << 6);
+    LPC_PINCON->PINSEL1 = (0x2<<20); //Set DAC output
+    LPC_DAC->DACR |= (0 << 16);
 }
