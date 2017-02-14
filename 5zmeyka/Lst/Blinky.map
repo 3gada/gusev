@@ -323,7 +323,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1620        164          0         72       8228       3314   blinky.o
+      1620        164          0         72       8228       3338   blinky.o
       2004         80       5376          6          0       6467   glcd_spi_lpc1700.o
        234          0          0          0          0       1495   librarydisplay.o
          0          0         40          0          0       8395   rtx_conf_cm.o
@@ -331,7 +331,7 @@ Image component sizes
        532         66          0          4          0       4907   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-      4424        318       5788         84       8740      25466   Object Totals
+      4424        318       5788         84       8740      25490   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0        144          2          0          0   (incl. Padding)
 
@@ -370,8 +370,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4512        334       5788         84       8740      25274   Grand Totals
-      4512        334       5788         84       8740      25274   ELF Image Totals
+      4512        334       5788         84       8740      25298   Grand Totals
+      4512        334       5788         84       8740      25298   ELF Image Totals
       4512        334       5788         84          0          0   ROM Totals
 
 ==============================================================================

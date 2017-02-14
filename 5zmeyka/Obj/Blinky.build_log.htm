@@ -7,3 +7,49 @@ C:\Users\av.naykov\Desktop\gusev\5zmeyka\Blinky.uvproj
 Project File Date:  10/03/2016
 
 <h2>Output:</h2>
+Build target 'MCB1700'
+compiling Blinky.c...
+LibraryDisplay.h(1): warning:  #1295-D: Deprecated declaration init_display - give arg types
+  extern void init_display ();
+LibraryDisplay.h(4): warning:  #1-D: last line of file ends without a newline
+  void GLCD_DisplayU32(unsigned int ln, unsigned int col, unsigned char fi, unsigned int Data);
+Blinky.c(29): warning:  #1295-D: Deprecated declaration SysTick_Handler - give arg types
+  void SysTick_Handler();
+Blinky.c(30): warning:  #1295-D: Deprecated declaration InitADC - give arg types
+  void InitADC();
+Blinky.c(32): warning:  #1295-D: Deprecated declaration port_init - give arg types
+  void port_init();
+Blinky.c(33): warning:  #1295-D: Deprecated declaration systick_init - give arg types
+  void systick_init();
+Blinky.c(34): warning:  #1295-D: Deprecated declaration display_color - give arg types
+  void display_color();
+Blinky.c(35): warning:  #1295-D: Deprecated declaration display_line - give arg types
+  void display_line();
+Blinky.c(36): warning:  #1295-D: Deprecated declaration coord_init - give arg types
+  void coord_init();
+Blinky.c(38): warning:  #1295-D: Deprecated declaration game_over - give arg types
+  void game_over();
+Blinky.c(39): warning:  #1295-D: Deprecated declaration init_ShIM - give arg types
+  void init_ShIM();
+Blinky.c(138): warning:  #61-D: integer operation result is out of range
+          if((LPC_ADC->ADGDR & (1<<31)) != 0)
+Blinky.c(138): warning:  #68-D: integer conversion resulted in a change of sign
+          if((LPC_ADC->ADGDR & (1<<31)) != 0)
+Blinky.c(177): warning:  #61-D: integer operation result is out of range
+      A[5] = (1<<31);
+Blinky.c(177): warning:  #68-D: integer conversion resulted in a change of sign
+      A[5] = (1<<31);
+Blinky.c(181): warning:  #61-D: integer operation result is out of range
+        LPC_GPIO1->FIODIR  |= (1<<28)  | (1<<29)  | (1<<31);                  // P1.28, P1.29, P1.31 - OUT
+Blinky.c: 16 warnings, 0 errors
+linking...
+Program Size: Code=4512 RO-data=5788 RW-data=84 ZI-data=8740  
+".\Obj\Blinky.axf" - 0 Error(s), 16 Warning(s).
+Load "C:\\Users\\av.naykov\\Desktop\\gusev\\5zmeyka\\Obj\\Blinky.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
