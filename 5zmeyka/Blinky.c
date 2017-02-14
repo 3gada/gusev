@@ -151,16 +151,16 @@ void SysTick_Handler()
             LPC_ADC->ADCR |= (1 << 24) | (1 << 2);
         }
         /*button = (LPC_GPIO2->FIOPIN)&(1<<10);
-        if (button == 0)
-        {
-            timing -= 100000;
-            led++;
-            if (timing <= 300000)
-            {    
-                timing = 1100000;
-                led = 0;
-            }
-        }*/
+if (button == 0)
+{
+timing -= 100000;
+led++;
+if (timing <= 300000)
+{    
+timing = 1100000;
+led = 0;
+}
+}*/
     }
 }
 
